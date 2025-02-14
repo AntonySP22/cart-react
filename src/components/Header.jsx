@@ -42,11 +42,28 @@ export const Header = ({
                             {allProducts.map(product => (
                                 <div className="cart-product" key={product.id}>
                                     <div className="info-cart-product">
-                                        <span className="cantidad-producto-carrito">{product.quantity}</span>
-                                        <p className="titulo-producto-carrito">{product.title}</p>
-                                        <span className="precio-producto-carrito">${product.price}</span>
+                                        <img 
+                                            src={product.urlImage} 
+                                            alt={product.title}
+                                            style={{
+                                                width: '50px',
+                                                height: '50px',
+                                                objectFit: 'cover',
+                                                borderRadius: '5px'
+                                            }}
+                                        />
+                                        <div>
+                                            <span className="cantidad-producto-carrito">{product.quantity}</span>
+                                            <p className="titulo-producto-carrito">{product.title}</p>
+                                            <span className="precio-producto-carrito">${product.price}</span>
+                                        </div>
                                     </div>
-                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Ik0xOSAzSDVhMiAyIDAgMCAwLTIgMnYxNGEyIDIgMCAwIDAgMiAyaDE0YTIgMiAwIDAgMCAyLTJWNWEyIDIgMCAwIDAtMi0ybS0zLjQgMTRMMTIgMTMuNEw4LjQgMTdMNyAxNS42bDMuNi0zLjZMNyA4LjRMOC40IDdsMy42IDMuNkwxNS42IDdMMTcgOC40TDEzLjQgMTJsMy42IDMuNnoiLz48L3N2Zz4=" alt="cerrar" className='icon-close' onClick={() => onDeleteProduct(product)}/>
+                                    <img 
+                                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Ik0xOSAzSDVhMiAyIDAgMCAwLTIgMnYxNGEyIDIgMCAwIDAgMiAyaDE0YTIgMiAwIDAgMCAyLTJWNWEyIDIgMCAwIDAtMi0ybS0zLjQgMTRMMTIgMTMuNEw4LjQgMTdMNyAxNS42bDMuNi0zLjZMNyA4LjRMOC40IDdsMy42IDMuNkwxNS42IDdMMTcgOC40TDEzLjQgMTJsMy42IDMuNnoiLz48L3N2Zz4=" 
+                                        alt="cerrar" 
+                                        className='icon-close' 
+                                        onClick={() => onDeleteProduct(product)}
+                                    />
                                 </div>
                             ))}
                             <div className="cart-total">
